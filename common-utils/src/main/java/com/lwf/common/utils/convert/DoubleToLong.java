@@ -10,5 +10,8 @@ public class DoubleToLong {
     public static void main(String[] args) {
         Double d=1604892539000d;
         System.out.println(d.longValue());
+        System.out.println(d);
+        System.out.println(d.toString());
+        System.out.println(String.valueOf( d.longValue()));
     }
 }
