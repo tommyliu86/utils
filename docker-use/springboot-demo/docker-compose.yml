@@ -1,0 +1,16 @@
+version: "3"
+services:
+  springboot-test:
+    build: .
+    ports:
+      - "8881:8080"
+#    depends_on:
+#      - mysql
+#    links:
+#      - mysql
+#      - mysql:shard-mysql
+    container_name: springboot-test
+    environment:
+      - "ARGS=--spring.profiles.active=table"
+
+

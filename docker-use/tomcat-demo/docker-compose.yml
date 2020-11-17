@@ -1,0 +1,6 @@
+version: "3"
+services:
+  tomcat-test:
+    build: .
+    ports:
+      - "8880:8080"
