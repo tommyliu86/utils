@@ -27,13 +27,14 @@ import java.util.stream.Collectors;
  * @date: 2020-11-12 19:50
  */
 @Slf4j
-public class RestTemplateTest {
+public class RestTemplateTest  {
     public static List<JsonNode> getJson(List<String> stringList){
 
         List<JsonNode> jsonNodeList = stringList.stream().map(RestTemplateTest::createJson).collect(Collectors.toList());
         return jsonNodeList;
     }
     public  static JsonNode createJson(String jsonStr){
+
         String[] strings = StringUtils.tokenizeToStringArray(jsonStr, ",");
         ObjectNode objectNode = JsonNodeFactory.instance.objectNode()
                 .put("contentId", strings[0])
