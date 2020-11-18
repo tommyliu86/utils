@@ -127,7 +127,7 @@
                 <version>3.1.0</version>
             </plugin>
 
-            <!-- Tomcat Maven 插件用于构建可执行 war -->
+            <!-- Tomcat Maven 插件用于进行本地测试运行 war -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
