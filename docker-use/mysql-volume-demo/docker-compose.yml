@@ -1,0 +1,27 @@
+version: "3"
+services:
+  docker-mysql:
+    build: ./mysql/
+    ports:
+      - "3061:3306"
+    container_name: docker-mysql
+    environment:
+      - "ALLOW_EMPTY_PASSWORD=yes"
+    volumes:
+      - "/Users/liuwenfei14/Documents/volume/utils/docker.mysql:/bitnami/mysql/data"
+
+  mysql-demo:
+    build: .
+
+    ports:
+      - "8883:8080"
+    depends_on:
+      - docker-mysql
+    links:
+      - docker-mysql
+      - docker-mysql:mysql
+    container_name: mysql-demo
+    volumes:
+      - "/Users/liuwenfei14/Documents/volume/utils/log:/home/log"
+
+

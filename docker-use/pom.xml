@@ -12,6 +12,7 @@
         <module>springmvc-demo</module>
         <module>tomcat-demo</module>
         <module>springboot-demo</module>
+        <module>mysql-volume-demo</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>docker-use</artifactId>
