@@ -10,6 +10,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.*;
 import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
@@ -28,6 +30,11 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class RestTemplateTest  {
+    //在springboot中使用时一般通过RestTemplateBuilder来进行创建
+    @Bean
+    RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
+    }
     public static List<JsonNode> getJson(List<String> stringList){
 
         List<JsonNode> jsonNodeList = stringList.stream().map(RestTemplateTest::createJson).collect(Collectors.toList());
