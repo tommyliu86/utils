@@ -32,5 +32,11 @@ public class SpringApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<StudentPo> studentPos = studentMapper.listAll();
         log.info("students is :{}",objectMapper.writeValueAsString(studentPos));
+        StudentPo studentPo = new StudentPo();
+        studentPo.setName("forId");
+        studentPo.setAge(1);
+        studentPo.setIdentity("nv");
+        int insert = studentMapper.Insert(studentPo);
+        log.info("insert student is :{}",objectMapper.writeValueAsString(studentPo));
     }
 }

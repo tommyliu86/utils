@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
@@ -26,7 +27,11 @@ public class SpringbootDemoApplication implements CommandLineRunner {
         log.info("input is :"+name);
         return "hello world "+name;
     }
-
+    @RequestMapping("/input")
+    public String hello(@RequestParam String name,@RequestParam String speak){
+        log.info("input is name: "+name+"speak:"+speak);
+        return "input "+name+" "+speak ;
+    }
     /**
      * 测试 springboot中的objectmapper 是否支持了java8中的java.time api
      * 通过查看{@link Jackson2ObjectMapperBuilder} 可以发现如果module在引入路径中，会进行自动注册
