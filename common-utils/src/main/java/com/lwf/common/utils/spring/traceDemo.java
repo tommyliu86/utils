@@ -24,7 +24,7 @@ import java.util.List;
 public class traceDemo {
     @Slf4j
     @Aspect
-    public class UmpMonitor {
+    public static class UmpMonitor {
 
         @Value("${jAppName}")
         private String appName;

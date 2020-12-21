@@ -2,6 +2,7 @@ package com.lwf.common.utils.convert;
 
 import org.apache.commons.lang3.time.DateUtils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,7 +16,10 @@ import java.util.Date;
 public class DateAndCalendar {
     static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
+        main1(args);
+    }
+    public static void main2(String[] args) {
 
         //获取到月底的时间差值
         //date的设定时间操作需要借助于common.lang包中的DateUtils来进行设置
@@ -46,5 +50,13 @@ public class DateAndCalendar {
         System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
 
 
+    }
+    static SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
+
+    public static void main1(String[] args) throws ParseException {
+        Date parse = simpleDateFormat1.parse("2019-03-22 18:54:58.0");
+        System.out.println(parse);
+        Date parse1 = simpleDateFormat.parse("2019-03-22 18:54:58.0");
+        System.out.println(parse1);
     }
 }
