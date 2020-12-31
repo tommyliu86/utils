@@ -23,6 +23,23 @@
         </resources>
 
         <plugins>
+
+            <!--配置该插件，在打包上传文件时可以把source文件一并上传-->
+            <!--http://maven.apache.org/plugins/maven-source-plugin/-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <!--控制生效的阶段、周期，对照maven的命令阶段！-->
+                            <phase>install</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!--maven编译都需要使用compiler，这个插件可以配置编译使用的jdk版本和编译的版本，若default则会默认是1.5的jdk和1.5的编译-->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

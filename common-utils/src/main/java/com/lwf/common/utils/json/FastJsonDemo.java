@@ -52,5 +52,7 @@ public class FastJsonDemo {
         System.out.println(o);
         String url = o.getString("url");
         System.out.println(url);
+
+        System.out.println(new JSONObject().toJSONString());
     }
 }
