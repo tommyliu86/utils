@@ -12,6 +12,7 @@
         <module>common-utils</module>
         <module>mavenconfig</module>
         <module>docker-use</module>
+        <module>springcache-test</module>
 
     </modules>
     <dependencyManagement>

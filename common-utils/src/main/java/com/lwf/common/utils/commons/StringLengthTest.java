@@ -18,6 +18,11 @@ public class StringLengthTest {
 
         String articleDescById = getArticleDescById(new ArrayList<>(Arrays.asList(a1, a2,a1,a2)));
         System.out.println(articleDescById);
+
+        String nul=null;
+        System.out.println("zhe shi yige null"+nul);
+//        System.out.println(nul.equals("1"));
+        System.out.println(nul=="1");
     }
     public static String getArticleDescById(  List<String> descList) {
 
