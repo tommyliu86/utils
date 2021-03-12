@@ -72,10 +72,10 @@ public class RestTemplateTest  {
                 "  \"publishTime\": \"2020-07-06 15:33:03\"\n" +
                 "}]");
         Request request = new Request.Builder()
-                .url("http://discovery-cms.jd.com/discovery/exchange/content/batchUpdate.do")
+                .url("")
                 .method("POST", body)
                 .addHeader("content-type", "application/json")
-                .addHeader("Cookie", "sso.jd.com=BJ.8ae1def875424134bec544a5459b50d6")
+                .addHeader("Cookie", "")
                 .build();
         Response response = client.newCall(request).execute();
         log.info(response.toString());
@@ -89,7 +89,7 @@ public class RestTemplateTest  {
         HttpHeaders httpHeaders = new HttpHeaders();
 
         httpHeaders.setContentType( MediaType.APPLICATION_JSON);
-        httpHeaders.put(HttpHeaders.COOKIE,new ArrayList<String>(Arrays.asList( "sso.jd.com=BJ.dce758e3aa8b43a09541d2b2213c9018")));
+        httpHeaders.put(HttpHeaders.COOKIE,new ArrayList<String>(Arrays.asList( "")));
 
 
 
@@ -110,7 +110,7 @@ public class RestTemplateTest  {
         log.info("fromentity is :"+objectMapper.writeValueAsString(formEntity));
 
 
-        ResponseEntity<String> exchange = restTemplate.exchange("http://discovery-cms.jd.com/discovery/exchange/content/batchUpdate.do", HttpMethod.POST, formEntity, String.class, (Object) null);
+        ResponseEntity<String> exchange = restTemplate.exchange("", HttpMethod.POST, formEntity, String.class, (Object) null);
 
         log.info("result is :"+exchange);
     }
