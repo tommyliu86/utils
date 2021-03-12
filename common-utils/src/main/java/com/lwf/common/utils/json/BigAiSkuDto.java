@@ -58,19 +58,19 @@ public class BigAiSkuDto {
      */
     private String transDisputeTyRate;
     /**
-     * benchMarkRate	京东风向标排名率
+     * benchMarkRate
      */
     private String benchMarkRate;
     /**
-     * wlCommAmount	无线商品佣金金额
+     * wlCommAmount
      */
     private String wlCommAmount;
     /**
-     * wlCommShare	无线商品佣金比例
+     * wlCommShare
      */
     private String wlCommShare;
     /**
-     * jdPrc	京东价
+     *
      *
      */
     private String jdPrc;
