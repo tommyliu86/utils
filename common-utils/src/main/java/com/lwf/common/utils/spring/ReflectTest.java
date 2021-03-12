@@ -13,19 +13,26 @@ import java.lang.reflect.Field;
  */
 public class ReflectTest {
     public static void main(String[] args) {
-
+        System.out.println("------测试 获取父类");
         Class studentSonClass = StudentSon.class;
         while (studentSonClass!=Object.class){
             System.out.println(studentSonClass.getName());
+            Field[] declaredFields = studentSonClass.getDeclaredFields();
+            for (Field declaredField : declaredFields) {
+                System.out.println("当前类的字段："+declaredField.getName());
+            }
             studentSonClass = studentSonClass.getSuperclass();
         }
         System.out.println(studentSonClass.getName());
 
+
+        System.out.println("------测试 获取 getDeclaredFields");
         Field[] declaredFields = Student.class.getDeclaredFields();
         System.out.println(JSON.toJSONString(declaredFields));
         Field[] declaredFields1 = StudentSon.class.getDeclaredFields();
         System.out.println(JSON.toJSONString(declaredFields1));
 
+        System.out.println("------测试 获取 ReflectionUtils.getField");
         StudentSon studentSon = new StudentSon();
         studentSon.setFriend("1");
         studentSon.setAge(3);
